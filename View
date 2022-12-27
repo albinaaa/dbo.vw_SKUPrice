@@ -1,0 +1,4 @@
+CREATE VIEW dbo.vw_SKUPrice as
+SELECT s.ID, s.Code, s.Name, dbo.udf_GetSKUPrice(b.ID) AS SKUPrice
+FROM dbo.SKU AS s
+  LEFT OUTER JOIN dbo.Basket AS b ON s.ID = b.ID_SKU
